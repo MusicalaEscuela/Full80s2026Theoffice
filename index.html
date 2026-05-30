@@ -1,0 +1,362 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body,html{background:#07050e;}
+.pres{width:100%;font-family:'Raleway',sans-serif;overflow:hidden;background:#07050e;position:relative;}
+
+/* SLIDES */
+.slide{display:none;width:100%;min-height:540px;position:relative;overflow:hidden;flex-direction:column;justify-content:center;align-items:center;}
+.slide.active{display:flex;animation:zoomIn .65s cubic-bezier(.22,1,.36,1) both;}
+@keyframes zoomIn{from{opacity:0;transform:scale(1.04) translateY(8px);}to{opacity:1;transform:none;}}
+
+/* NAV */
+.nav-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:#000000cc;position:relative;z-index:20;gap:12px;}
+.nav-dots{display:flex;gap:5px;justify-content:center;flex:1;flex-wrap:wrap;}
+.dot{width:6px;height:6px;border-radius:50%;background:#ffffff22;cursor:pointer;transition:all .35s;flex-shrink:0;}
+.dot.active{background:#e8a020;width:22px;border-radius:3px;}
+.nbtn{background:transparent;border:1px solid #ffffff25;color:#fff;font-family:'Raleway',sans-serif;font-size:12px;letter-spacing:1px;padding:7px 16px;border-radius:100px;cursor:pointer;transition:all .3s;white-space:nowrap;}
+.nbtn:hover{border-color:#e8a020;color:#e8a020;}
+.ctr{font-size:11px;color:#ffffff44;letter-spacing:2px;min-width:36px;text-align:right;}
+
+/* ─── SLIDE 1: PORTADA ─── */
+.s-portada{background:#07050e;}
+.portada-grid{position:absolute;inset:0;background-image:linear-gradient(#ffffff07 1px,transparent 1px),linear-gradient(90deg,#ffffff07 1px,transparent 1px);background-size:50px 50px;}
+.portada-ring{position:absolute;border-radius:50%;border:1px solid;}
+.portada-content{position:relative;z-index:2;text-align:center;padding:40px 32px;}
+.p-eyebrow{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#e8a02088;margin-bottom:14px;}
+.p-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(70px,15vw,110px);letter-spacing:10px;line-height:1;color:#fff;margin-bottom:4px;}
+.p-sub{font-size:13px;letter-spacing:3px;color:#ffffff55;margin-bottom:24px;font-style:italic;}
+.p-divider{width:50px;height:2px;background:#e8a020;margin:0 auto 28px;}
+.song-pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.sp{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:100px;border:1px solid;}
+
+
+.p-logo{width:min(420px,78vw);display:block;margin:0 auto 18px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.45));}
+.portada-content{position:relative;z-index:2;text-align:center;padding:40px 32px;max-width:1000px;margin:0 auto;}
+.member-photo{max-width:min(92%,620px);max-height:100%;width:auto;height:auto;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 20px 26px rgba(0,0,0,.42));border-radius:18px;}
+.who-av,.f-av{background:#09070f;}
+@media (max-width:620px){
+  .p-logo{width:min(320px,84vw);margin-bottom:14px;}
+}
+
+/* ─── SLIDE MIEMBRO ─── */
+.s-member{min-height:560px;}
+.member-bg{position:absolute;inset:0;z-index:0;}
+.member-photo-wrap{position:absolute;inset:0;z-index:1;display:flex;align-items:flex-end;justify-content:center;padding:20px 18px 150px;pointer-events:none;}
+.member-photo{max-width:min(92%,560px);max-height:100%;width:auto;height:auto;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 20px 26px rgba(0,0,0,.42));}
+.member-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(to top, #07050e 30%, #07050e22 58%, transparent 88%);}
+.member-content{position:relative;z-index:3;width:100%;padding:28px 32px 20px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;min-height:540px;}
+.m-role-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;padding:5px 14px;border-radius:100px;border:1px solid;margin-bottom:10px;font-weight:700;}
+.m-name-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,9vw,72px);letter-spacing:4px;color:#fff;line-height:1;margin-bottom:4px;}
+.m-instrument{font-size:13px;color:#ffffffaa;letter-spacing:2px;margin-bottom:16px;}
+.m-quote{font-size:14px;color:#ffffffcc;line-height:1.7;max-width:400px;font-style:italic;border-left:2px solid #e8a020;padding-left:14px;}
+
+.member-andres-alonso .member-photo{max-width:min(88%,360px);}
+.member-claudia-caro .member-photo{max-width:min(94%,430px);}
+.member-andres-gutierrez .member-photo{max-width:min(96%,560px);}
+.member-gabriel-molano .member-photo{max-width:min(95%,520px);}
+.member-natalia-aguirre .member-photo{max-width:min(82%,320px);}
+.member-valeshka-rodriguez .member-photo{max-width:min(88%,320px);}
+@media (max-width:620px){
+  .member-photo-wrap{padding:16px 12px 170px;}
+  .member-photo{max-width:min(95%,360px);}
+  .member-andres-gutierrez .member-photo{max-width:min(96%,390px);}
+  .member-gabriel-molano .member-photo{max-width:min(94%,370px);}
+}
+
+/* ─── SLIDE CANCIÓN ─── */
+.s-song{min-height:540px;}
+.song-accent-bar{position:absolute;top:0;left:0;right:0;height:3px;z-index:5;}
+.song-num-bg{position:absolute;bottom:-10px;right:16px;font-family:'Bebas Neue',sans-serif;font-size:180px;color:#ffffff04;line-height:1;z-index:1;user-select:none;}
+.song-content{position:relative;z-index:3;text-align:center;padding:44px 32px 28px;width:100%;}
+.s-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:12px;font-weight:700;}
+.s-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,11vw,86px);letter-spacing:6px;line-height:1;color:#fff;margin-bottom:6px;}
+.s-artist{font-size:12px;letter-spacing:3px;color:#ffffff55;margin-bottom:18px;}
+.s-divider{width:40px;height:2px;margin:0 auto 20px;}
+.s-desc{font-size:14px;line-height:1.75;color:#ffffffbb;max-width:460px;margin:0 auto 20px;}
+.tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;}
+.tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:100px;border:1px solid;}
+.who-label{font-size:10px;letter-spacing:3px;color:#ffffff33;text-transform:uppercase;margin-bottom:10px;}
+.who-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.who-chip{display:flex;align-items:center;gap:8px;background:#ffffff0c;border:1px solid #ffffff12;border-radius:100px;padding:6px 14px 6px 6px;}
+.who-av{width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:top center;border:1.5px solid;}
+.who-name{font-size:11px;color:#ffffffcc;font-weight:600;}
+
+/* ─── SLIDE FINAL ─── */
+.s-final{background:#07050e;}
+.final-content{position:relative;z-index:2;text-align:center;padding:40px 28px;}
+.f-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(54px,12vw,90px);letter-spacing:8px;color:#fff;line-height:1;margin-bottom:6px;}
+.f-sub{font-size:13px;color:#ffffff55;letter-spacing:3px;margin-bottom:22px;font-style:italic;}
+.f-divider{width:48px;height:2px;background:#e8a020;margin:0 auto 26px;}
+.f-msg{font-size:14px;line-height:1.8;color:#ffffffcc;max-width:480px;margin:0 auto 28px;}
+.f-band{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.f-member{text-align:center;width:80px;}
+.f-av{width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:top center;border:2px solid #e8a02055;margin:0 auto 6px;display:block;}
+.f-nm{font-size:10px;color:#ffffffaa;font-weight:600;letter-spacing:.5px;}
+</style>
+
+<div class="pres">
+
+<!-- ═══ SLIDE 1: PORTADA ═══ -->
+<div class="slide s-portada active" id="s0">
+  <div class="portada-grid"></div>
+  <div class="portada-ring" style="width:280px;height:280px;border-color:#e8a02020;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+  <div class="portada-ring" style="width:440px;height:440px;border-color:#e8a02010;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+  <div class="portada-content">
+    <img class="p-logo" src="assets/logo/the-office-logo-rockero.png" alt="Logo The Office">
+    <div class="p-eyebrow">Tarde Musical &mdash; Banda de Adultos</div>
+    <div class="p-title">The Office</div>
+    <div class="p-sub">Una tarde, seis músicos, cuatro canciones</div>
+    <div class="p-divider"></div>
+    <div class="song-pills">
+      <span class="sp" style="color:#e85050;border-color:#e8505055;">Zombie</span>
+      <span class="sp" style="color:#e8a020;border-color:#e8a02055;">Take Me Out</span>
+      <span class="sp" style="color:#20b8a0;border-color:#20b8a055;">Tu Cárcel</span>
+      <span class="sp" style="color:#5090e8;border-color:#5090e855;">Boys Don't Cry</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 2: ANDRÉS ALONSO ═══ -->
+<div class="slide s-member member-andres-alonso" id="s1">
+  <div class="member-photo-wrap"><img class="member-photo" src="assets/avatars/andres-alonso-avatar-rockero.png" alt="Andres Alonso"></div>
+  <div class="member-overlay"></div>
+  <div class="member-content">
+    <div class="m-role-tag" style="color:#e8a020;border-color:#e8a02055;">Voz principal</div>
+    <div class="m-name-big">Andrés Alonso</div>
+    <div class="m-instrument">Canto &mdash; The Office</div>
+    <div class="m-quote">La voz que le pone alma a cada nota de la tarde.</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 3: CLAUDIA CARO ═══ -->
+<div class="slide s-member member-claudia-caro" id="s2">
+  <div class="member-photo-wrap"><img class="member-photo" src="assets/avatars/claudia-caro-avatar-rockero.png" alt="Claudia Caro"></div>
+  <div class="member-overlay"></div>
+  <div class="member-content">
+    <div class="m-role-tag" style="color:#e85050;border-color:#e8505055;">Guitarra</div>
+    <div class="m-name-big">Claudia Caro</div>
+    <div class="m-instrument">Guitarra &mdash; The Office</div>
+    <div class="m-quote">Cada acorde suena como si siempre hubiera pertenecido ahí.</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 4: ANDRÉS GUTIÉRREZ ═══ -->
+<div class="slide s-member member-andres-gutierrez" id="s3">
+  <div class="member-photo-wrap"><img class="member-photo" src="assets/avatars/andres-gutierrez-avatar-rockero.png" alt="Andres Gutierrez"></div>
+  <div class="member-overlay"></div>
+  <div class="member-content">
+    <div class="m-role-tag" style="color:#a020e8;border-color:#a020e855;">Batería</div>
+    <div class="m-name-big">Andrés Gutiérrez</div>
+    <div class="m-instrument">Batería &mdash; The Office</div>
+    <div class="m-quote">El corazón que le marca el pulso a toda la banda.</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 5: GABRIEL MOLANO ═══ -->
+<div class="slide s-member member-gabriel-molano" id="s4">
+  <div class="member-photo-wrap"><img class="member-photo" src="assets/avatars/gabriel-molano-avatar-rockero.png" alt="Gabriel Molano"></div>
+  <div class="member-overlay"></div>
+  <div class="member-content">
+    <div class="m-role-tag" style="color:#e85050;border-color:#e8505055;">Guitarra</div>
+    <div class="m-name-big">Gabriel Molano</div>
+    <div class="m-instrument">Guitarra &mdash; The Office</div>
+    <div class="m-quote">Los riffs que se quedan en la cabeza mucho después del show.</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 6: NATALIA AGUIRRE ═══ -->
+<div class="slide s-member member-natalia-aguirre" id="s5">
+  <div class="member-photo-wrap"><img class="member-photo" src="assets/avatars/natalia-aguirre-avatar-rockero.png" alt="Natalia Aguirre"></div>
+  <div class="member-overlay"></div>
+  <div class="member-content">
+    <div class="m-role-tag" style="color:#e8a020;border-color:#e8a02055;">Voz</div>
+    <div class="m-name-big">Natalia Aguirre</div>
+    <div class="m-instrument">Canto &mdash; The Office</div>
+    <div class="m-quote">Una voz que llena el espacio y toca directo al corazón.</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 7: VALESHKA RODRÍGUEZ ═══ -->
+<div class="slide s-member member-valeshka-rodriguez" id="s6">
+  <div class="member-photo-wrap"><img class="member-photo" src="assets/avatars/valeshka-rodriguez-avatar-rockero.png" alt="Valeshka Rodriguez"></div>
+  <div class="member-overlay"></div>
+  <div class="member-content">
+    <div class="m-role-tag" style="color:#20b8a0;border-color:#20b8a055;">Bajo</div>
+    <div class="m-name-big">Valeshka Rodríguez</div>
+    <div class="m-instrument">Bajo &mdash; The Office</div>
+    <div class="m-quote">El groove que sostiene todo desde abajo, con actitud y con estilo.</div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 8: ZOMBIE ═══ -->
+<div class="slide s-song" id="s7" style="background:#0e0808;">
+  <div class="song-accent-bar" style="background:#e85050;"></div>
+  <div class="song-num-bg">01</div>
+  <div class="song-content">
+    <div class="s-eyebrow" style="color:#e85050;">Canción 01 &bull; The Cranberries &bull; 1994</div>
+    <div class="s-title">Zombie</div>
+    <div class="s-artist">Dolores O'Riordan</div>
+    <div class="s-divider" style="background:#e85050;"></div>
+    <div class="s-desc">Un himno que nació del dolor y se convirtió en el grito de toda una generación. Rock alternativo puro, voz desgarradora y guitarras que no perdonan.</div>
+    <div class="tags">
+      <span class="tag" style="color:#e85050;border-color:#e8505044;">Rock alternativo</span>
+      <span class="tag" style="color:#ffffff66;border-color:#ffffff22;">Mi menor</span>
+      <span class="tag" style="color:#ffffff66;border-color:#ffffff22;">Poderosa</span>
+    </div>
+    <div class="who-label">La tocan</div>
+    <div class="who-row">
+      <div class="who-chip"><img class="who-av" style="border-color:#e85050;" src="assets/avatars/andres-alonso-avatar-rockero.png"><span class="who-name">Andrés A. &bull; Voz</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#e85050;" src="assets/avatars/natalia-aguirre-avatar-rockero.png"><span class="who-name">Natalia &bull; Voz</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#e85050;" src="assets/avatars/claudia-caro-avatar-rockero.png"><span class="who-name">Claudia &bull; Guitarra</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#e85050;" src="assets/avatars/gabriel-molano-avatar-rockero.png"><span class="who-name">Gabriel &bull; Guitarra</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#e85050;" src="assets/avatars/valeshka-rodriguez-avatar-rockero.png"><span class="who-name">Valeshka &bull; Bajo</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#e85050;" src="assets/avatars/andres-gutierrez-avatar-rockero.png"><span class="who-name">Andrés G. &bull; Bater&iacute;a</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 9: TAKE ME OUT ═══ -->
+<div class="slide s-song" id="s8" style="background:#0d0c07;">
+  <div class="song-accent-bar" style="background:#e8a020;"></div>
+  <div class="song-num-bg">02</div>
+  <div class="song-content">
+    <div class="s-eyebrow" style="color:#e8a020;">Canción 02 &bull; Franz Ferdinand &bull; 2004</div>
+    <div class="s-title">Take Me Out</div>
+    <div class="s-artist">Alex Kapranos</div>
+    <div class="s-divider" style="background:#e8a020;"></div>
+    <div class="s-desc">El riff más adictivo del indie rock. Empieza despacio, rompe en dos y ya no para. Uno de esos temas que obligan al cuerpo a moverse.</div>
+    <div class="tags">
+      <span class="tag" style="color:#e8a020;border-color:#e8a02044;">Indie Rock</span>
+      <span class="tag" style="color:#ffffff66;border-color:#ffffff22;">Fa# mayor</span>
+      <span class="tag" style="color:#ffffff66;border-color:#ffffff22;">Bailable</span>
+    </div>
+    <div class="who-label">La tocan</div>
+    <div class="who-row">
+      <div class="who-chip"><img class="who-av" style="border-color:#e8a020;" src="assets/avatars/andres-alonso-avatar-rockero.png"><span class="who-name">Andrés A. &bull; Voz</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#e8a020;" src="assets/avatars/natalia-aguirre-avatar-rockero.png"><span class="who-name">Natalia &bull; Voz</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#e8a020;" src="assets/avatars/claudia-caro-avatar-rockero.png"><span class="who-name">Claudia &bull; Guitarra</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#e8a020;" src="assets/avatars/gabriel-molano-avatar-rockero.png"><span class="who-name">Gabriel &bull; Guitarra</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#e8a020;" src="assets/avatars/andres-gutierrez-avatar-rockero.png"><span class="who-name">Andrés G. &bull; Bater&iacute;a</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 10: TU CÁRCEL ═══ -->
+<div class="slide s-song" id="s9" style="background:#070e0c;">
+  <div class="song-accent-bar" style="background:#20b8a0;"></div>
+  <div class="song-num-bg">03</div>
+  <div class="song-content">
+    <div class="s-eyebrow" style="color:#20b8a0;">Canción 03 &bull; Los Bukis &bull; 1988</div>
+    <div class="s-title">Tu Cárcel</div>
+    <div class="s-artist">Marco Antonio Solís</div>
+    <div class="s-divider" style="background:#20b8a0;"></div>
+    <div class="s-desc">La balada latina más emotiva de los 80. Marco Antonio Solís escribió lo que millones sienten pero no saben cómo decir. Una canción que no pasa de moda.</div>
+    <div class="tags">
+      <span class="tag" style="color:#20b8a0;border-color:#20b8a044;">Romántico</span>
+      <span class="tag" style="color:#ffffff66;border-color:#ffffff22;">La mayor</span>
+      <span class="tag" style="color:#ffffff66;border-color:#ffffff22;">Emotiva</span>
+    </div>
+    <div class="who-label">La tocan</div>
+    <div class="who-row">
+      <div class="who-chip"><img class="who-av" style="border-color:#20b8a0;" src="assets/avatars/andres-alonso-avatar-rockero.png"><span class="who-name">Andrés A. &bull; Voz</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#20b8a0;" src="assets/avatars/natalia-aguirre-avatar-rockero.png"><span class="who-name">Natalia &bull; Voz</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#20b8a0;" src="assets/avatars/claudia-caro-avatar-rockero.png"><span class="who-name">Claudia &bull; Guitarra</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#20b8a0;" src="assets/avatars/gabriel-molano-avatar-rockero.png"><span class="who-name">Gabriel &bull; Guitarra</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#20b8a0;" src="assets/avatars/valeshka-rodriguez-avatar-rockero.png"><span class="who-name">Valeshka &bull; Bajo</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#20b8a0;" src="assets/avatars/andres-gutierrez-avatar-rockero.png"><span class="who-name">Andrés G. &bull; Bater&iacute;a</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 11: BOYS DON'T CRY ═══ -->
+<div class="slide s-song" id="s10" style="background:#07090e;">
+  <div class="song-accent-bar" style="background:#5090e8;"></div>
+  <div class="song-num-bg">04</div>
+  <div class="song-content">
+    <div class="s-eyebrow" style="color:#5090e8;">Canción 04 &bull; The Cure &bull; 1979</div>
+    <div class="s-title">Boys Don't Cry</div>
+    <div class="s-artist">Robert Smith</div>
+    <div class="s-divider" style="background:#5090e8;"></div>
+    <div class="s-desc">Post-punk con corazón. Robert Smith le puso palabras a la vulnerabilidad de toda una generación. Un clásico que sigue siendo fresco décadas después.</div>
+    <div class="tags">
+      <span class="tag" style="color:#5090e8;border-color:#5090e844;">New Wave</span>
+      <span class="tag" style="color:#ffffff66;border-color:#ffffff22;">Do mayor</span>
+      <span class="tag" style="color:#ffffff66;border-color:#ffffff22;">Atemporal</span>
+    </div>
+    <div class="who-label">La tocan</div>
+    <div class="who-row">
+      <div class="who-chip"><img class="who-av" style="border-color:#5090e8;" src="assets/avatars/andres-alonso-avatar-rockero.png"><span class="who-name">Andrés A. &bull; Voz</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#5090e8;" src="assets/avatars/natalia-aguirre-avatar-rockero.png"><span class="who-name">Natalia &bull; Voz</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#5090e8;" src="assets/avatars/claudia-caro-avatar-rockero.png"><span class="who-name">Claudia &bull; Guitarra</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#5090e8;" src="assets/avatars/gabriel-molano-avatar-rockero.png"><span class="who-name">Gabriel &bull; Guitarra</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#5090e8;" src="assets/avatars/valeshka-rodriguez-avatar-rockero.png"><span class="who-name">Valeshka &bull; Bajo</span></div>
+      <div class="who-chip"><img class="who-av" style="border-color:#5090e8;" src="assets/avatars/andres-gutierrez-avatar-rockero.png"><span class="who-name">Andrés G. &bull; Bater&iacute;a</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 12: CIERRE ═══ -->
+<div class="slide s-final" id="s11">
+  <div class="portada-grid"></div>
+  <div class="portada-ring" style="width:260px;height:260px;border-color:#e8a02018;top:50%;left:50%;transform:translate(-50%,-60%);"></div>
+  <div class="final-content">
+    <img class="p-logo" src="assets/logo/the-office-logo-rockero.png" alt="Logo The Office">
+    <div class="p-eyebrow">The Office &mdash; Tarde musical</div>
+    <div class="f-title">¡Gracias!</div>
+    <div class="f-divider"></div>
+    <div class="f-msg">Gracias por ser parte de esta tarde llena de música, pasión y muchos ensayos. La música no tiene edad &mdash; y ellos lo demuestran.</div>
+    <div class="f-band">
+      <div class="f-member"><img class="f-av" src="assets/avatars/andres-alonso-avatar-rockero.png"><div class="f-nm">Andrés A.</div></div>
+      <div class="f-member"><img class="f-av" src="assets/avatars/natalia-aguirre-avatar-rockero.png"><div class="f-nm">Natalia</div></div>
+      <div class="f-member"><img class="f-av" src="assets/avatars/claudia-caro-avatar-rockero.png"><div class="f-nm">Claudia</div></div>
+      <div class="f-member"><img class="f-av" src="assets/avatars/gabriel-molano-avatar-rockero.png"><div class="f-nm">Gabriel</div></div>
+      <div class="f-member"><img class="f-av" src="assets/avatars/andres-gutierrez-avatar-rockero.png"><div class="f-nm">Andrés G.</div></div>
+      <div class="f-member"><img class="f-av" src="assets/avatars/valeshka-rodriguez-avatar-rockero.png"><div class="f-nm">Valeshka</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-bar">
+  <button class="nbtn" id="prevBtn" onclick="move(-1)">&#8592; Anterior</button>
+  <div class="nav-dots" id="dotsC"></div>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <span class="ctr" id="ctr">1 / 12</span>
+    <button class="nbtn" id="nextBtn" onclick="move(1)">Siguiente &#8594;</button>
+  </div>
+</div>
+</div>
+
+<script>
+const slides=document.querySelectorAll('.slide');
+const dotsC=document.getElementById('dotsC');
+const labels=['Portada','Andrés Alonso','Claudia Caro','Andrés Gutiérrez','Gabriel Molano','Natalia Aguirre','Valeshka Rodríguez','Zombie','Take Me Out','Tu Cárcel',"Boys Don't Cry",'Cierre'];
+let cur=0;
+labels.forEach((l,i)=>{
+  const d=document.createElement('div');
+  d.className='dot'+(i===0?' active':'');
+  d.title=l;
+  d.onclick=()=>goTo(i);
+  dotsC.appendChild(d);
+});
+function goTo(n){
+  slides[cur].classList.remove('active');
+  dotsC.children[cur].classList.remove('active');
+  cur=Math.max(0,Math.min(n,slides.length-1));
+  slides[cur].style.animation='none';
+  void slides[cur].offsetWidth;
+  slides[cur].style.animation='';
+  slides[cur].classList.add('active');
+  dotsC.children[cur].classList.add('active');
+  document.getElementById('ctr').textContent=(cur+1)+' / '+slides.length;
+  document.getElementById('prevBtn').style.opacity=cur===0?'0.3':'1';
+  document.getElementById('nextBtn').style.opacity=cur===slides.length-1?'0.3':'1';
+}
+function move(d){goTo(cur+d);}
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown')move(1);
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp')move(-1);
+});
+goTo(0);
+</script>
